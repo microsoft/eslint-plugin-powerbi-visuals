@@ -1,5 +1,5 @@
-
-# Contributing
+# Microsoft Power BI Custom Visuals ESLint Plugin
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-powerbi-visuals.svg)](https://www.npmjs.com/package/eslint-plugin-powerbi-visuals) [![npm](https://img.shields.io/npm/dm/eslint-plugin-powerbi-visuals.svg)](https://www.npmjs.com/package/eslint-plugin-powerbi-visuals)
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
