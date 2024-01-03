@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-powerbi-visuals",
-    "version": "0.8.2",
+    "version": "0.8.3",
     "description": "ESLint rules and extensions for Power BI Visuals projects",
     "main": "index.js",
     "scripts": {
@@ -12,6 +12,6 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "eslint": "^7.3.1"
+        "eslint": "^8.56.0"
     }
 }
