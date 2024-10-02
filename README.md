@@ -15,57 +15,30 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 # How To Use
 
-1. Install ES Lint packages
-```javascript
-npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --saveDev
- ```
-
-2. Install `eslint-plugin-pbivisuals` package
+1. Install `eslint-plugin-powerbi-visuals` package
 ```javascript
 npm install eslint-plugin-powerbi-visuals --saveDev
 ```
 
-3. Create `.eslintrc.js` file with the following content
+2. Create `eslint.config.mjs` file with the following content
 ```javascript
-module.exports = {
-	env: {
-	    "browser": true,
-	    "es6": true,
-	    "es2017": true
-	},
-	root: true,
-	parser: "@typescript-eslint/parser",
-	parserOptions: {
-	    project: "tsconfig.json",
-	    tsconfigRootDir: ".",
-	},
-	plugins: [
-	    "powerbi-visuals"
-	],
-	extends: [
-	    "plugin:powerbi-visuals/recommended"
-	],
-	rules: {}
-};
+import powerbiVisualsConfigs from "eslint-plugin-powerbi-visuals";
+
+export default [
+    powerbiVisualsConfigs.configs.recommended,
+    {
+        ignores: ["node_modules/**", "dist/**", ".vscode/**", ".tmp/**"],
+    },
+];
+```
+You can add more configs and rules by extending this array
+
+3. Add a script into `package.json`
+```javascript
+"eslint": "npx eslint ."
 ```
 
-4. Create `.eslintignore` file with the following content
-```javascript
-node_modules
-dist
-coverage
-test
-.eslintrc.js
-karma.conf.ts
-test.webpack.config.js
-```
-
-5. Add a script into `package.json`
-```javascript
-"eslint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
-```
-
-6. Run linter
+4. Run linter
 ```javascript
 npm run eslint
 ```
