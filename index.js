@@ -13,7 +13,11 @@ const noStringBasedSetImmediate = require("./lib/rules/noStringBasedSetImmediate
 const nonLiteralFsPath = require("./lib/rules/nonLiteralFsPath");
 const nonLiteralRequire = require("./lib/rules/nonLiteralRequire");
 
-module.exports = {
+const plugin = {
+    meta: {
+        name: "powerbi-visuals",
+        version: "1.0.0"
+    },
     rules: {
         "no-banned-terms": noBannedTerms,
         "no-document-domain": noDocumentDomain,
@@ -27,7 +31,15 @@ module.exports = {
         "insecure-random": insecureRandom,
         "mocha-avoid-only": mochaAvoidOnly
     },
-    configs: {
-        "recommended": configRecommended
-    }
+    configs: {}
 };
+
+Object.assign(plugin.configs, {recommended: {
+    ...configRecommended,
+    plugins: {
+        "powerbi-visuals": plugin,
+        ...configRecommended.plugins
+    }
+}});
+
+module.exports = plugin;
