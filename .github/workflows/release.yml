@@ -8,10 +8,12 @@ jobs:
   build:
     environment: automated-release
     runs-on: ubuntu-latest
-    env: 
+    permissions:
+      contents: write
+    env:
       GH_TOKEN: ${{secrets.GH_TOKEN}}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Add config details
       run: |
         git config --global user.name ${{secrets.NAME}}

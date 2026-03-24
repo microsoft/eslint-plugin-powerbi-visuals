@@ -12,10 +12,10 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "eslint": "^10.0.2"
+        "eslint": "^10.1.0"
     },
     "dependencies": {
-        "@typescript-eslint/parser": "^8.56.1",
-        "globals": "^17.3.0"
+        "@typescript-eslint/parser": "^8.57.2",
+        "globals": "^17.4.0"
     }
 }
