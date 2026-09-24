@@ -1,3 +1,6 @@
+## 1.1.2
+* Updated dependencies to address npm audit vulnerabilities.
+
 ## 1.1.1
 * Updated packages
 
